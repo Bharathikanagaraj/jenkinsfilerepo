@@ -1,12 +1,16 @@
-pipeline{
+ipeline {
     agent any
-    stages{
-        stage('stage1'){
-            steps{
-                script{
-                    
-                }
-            }
-        }
+    parameters {
+        gitParameter(branch: '',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'atg11_migration_code',
+                     description: '',
+                     name: 'BRANCH',
+                     quickFilterEnabled: true,
+                     selectedValue: 'NONE',
+                     sortMode: 'NONE',
+                     tagFilter: '*',
+                     type: 'PT_BRANCH',
+                     useRepository: 'https://github.com/RoadRunnerSports/web_primary.git')
     }
-}
+}    
